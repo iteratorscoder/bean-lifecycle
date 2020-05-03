@@ -7,6 +7,7 @@ import org.springframework.beans.factory.support.AbstractAutowireCapableBeanFact
 import org.springframework.context.annotation.CommonAnnotationBeanPostProcessor;
 
 import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 
 /**
  * @author iterators
@@ -38,6 +39,11 @@ public class MyInitializingBean implements InitializingBean {
     @PostConstruct
     public void init() {
         log.info("{} exec init code", TAG);
+    }
+
+    @PreDestroy
+    public void destroy() {
+        log.info("{} exec destroy code", TAG);
     }
 
     public void initMethod() {
