@@ -5,7 +5,6 @@ import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor;
 import org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory;
 import org.springframework.context.annotation.CommonAnnotationBeanPostProcessor;
-import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 
@@ -14,7 +13,6 @@ import javax.annotation.PostConstruct;
  * @time 2020.05.03
  */
 @Slf4j
-@Component
 public class MyInitializingBean implements InitializingBean {
 
     public static final String TAG = MyInitializingBean.class.getSimpleName();
@@ -40,5 +38,13 @@ public class MyInitializingBean implements InitializingBean {
     @PostConstruct
     public void init() {
         log.info("{} exec init code", TAG);
+    }
+
+    public void initMethod() {
+        log.info("{} exec init-method code", TAG);
+    }
+
+    public void destroyMethod() {
+        log.info("{} exec destroy-method code", TAG);
     }
 }
