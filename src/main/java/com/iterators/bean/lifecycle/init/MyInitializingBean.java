@@ -2,6 +2,9 @@ package com.iterators.bean.lifecycle.init;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.InitializingBean;
+import org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor;
+import org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory;
+import org.springframework.context.annotation.CommonAnnotationBeanPostProcessor;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
@@ -29,6 +32,11 @@ public class MyInitializingBean implements InitializingBean {
         log.info("{} exec afterPropertiesSet code", TAG);
     }
 
+    /**
+     * {@link CommonAnnotationBeanPostProcessor}和{@link InitDestroyAnnotationBeanPostProcessor} 会处理注解@PostConstruct 和@PreDeatory
+     * 处理流程在{@link AbstractAutowireCapableBeanFactory#initializeBean(java.lang.String, java.lang.Object, org.springframework.beans.factory.support.RootBeanDefinition)}的
+     * 的代码 wrappedBean = applyBeanPostProcessorsBeforeInitialization(wrappedBean, beanName);
+     */
     @PostConstruct
     public void init() {
         log.info("{} exec init code", TAG);
