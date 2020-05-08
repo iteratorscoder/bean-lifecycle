@@ -1,7 +1,7 @@
 package com.iterators.bean.lifecycle;
 
-import com.iterators.bean.lifecycle.cicular.MyCircularReferenceA;
-import com.iterators.bean.lifecycle.cicular.MyCircularReferenceB;
+import com.iterators.bean.lifecycle.circular.MyCircularReferenceA;
+import com.iterators.bean.lifecycle.circular.MyCircularReferenceB;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;

@@ -1,4 +1,4 @@
-package com.iterators.bean.lifecycle.cicular;
+package com.iterators.bean.lifecycle.circular;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,10 +10,10 @@ import org.springframework.stereotype.Component;
  */
 @Component
 @Slf4j
-public class MyCircularReferenceB {
+public class MyCircularReferenceA {
 
     @Autowired
-    private MyCircularReferenceA myCircularReferenceA;
+    public MyCircularReferenceB myCircularReferenceB;
 
 
     public void say() {
